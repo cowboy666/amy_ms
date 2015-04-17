@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Amily后台－专题编辑</title>
+        <!--#include file="/include/ext_source.html" -->
+        <style>
+            .img-wrap {
+                width : 100%;
+                overflow : hidden;
+            }
+            .img-wrap img{
+                width : 100%;
+            }
+        </style>   
+    </head>
+    <body>
+        <section id="container">
+            <!--#include file="/include/ext_head.html" -->
+            <div class="m-main">
+                <!--#include file="/include/ext_aside.html" -->
+                <section id="main-content">
+                    <section class="wrapper">
+                        <div class="row" style="margin-bottom:20px;">
+                            <div class="col-lg-10">
+                                <button type="button" class="btn btn-warning" id="lined-btn">线上内容</button>
+                                <button type="button" class="btn btn-default" id="draft-btn">草稿内容</button>
+                                <button type="button" class="btn btn-info" id="add-btn">添加轮播项目</button>
+                                <button type="button" class="btn btn-primary" id="save-btn">保存轮播信息</button>
+                                <button type="button" class="btn btn-success" id="online-btn">上线轮播</button>
+                            </div>    
+                        </div>
+                        <div id="js-container">
+                        </div>
+                    </section>
+                </section>     
+            </div>
+        </section>    
+    </body>
+    <script >
+        document.getElementById("operation-nav").className ="active";
+        document.getElementById("op-home-ad").className ="active";
+    </script>
+    <!--#include file="/include/ext_script.html" -->
+    <script src="http://amilystatic.me/scripts/lib/upload/??moxie.js,plupload.min.js,zh_CN.js"></script>
+    <script src="http://amilystatic.me/ms/scripts/page/home_ad.js" ></script>
+</html>
+
+

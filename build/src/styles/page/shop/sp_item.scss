@@ -1,0 +1,112 @@
+.mod-hd {
+    border-bottom : 1px solid #ddd;
+    margin-top : 15px;
+    overflow : hidden;
+    h4 {
+        @include fl;
+    }
+}
+.dl-info {
+    overflow : hidden;
+    margin : 10px;
+    margin-left : 36px;
+    dt , dd {
+        @include fl;
+    }
+    dd {
+        margin-right : 20px;
+    }
+}
+
+.dl-normal {
+    margin : 10px;
+    margin-left : 36px;
+}
+.dvd {
+    margin-top : 15px;
+    border-top : 1px solid #e1e1e8;
+    padding-top : 15px;
+    width : 800px;
+}
+.dl-row {
+    margin : 15px 0px;
+}
+.dl-hd {
+    padding-bottom: 10px;
+}
+.m-img-box {
+    @include border-radius(4px 4px 0 0);
+    border : 1px solid #ddd;
+    margin-top : 10px;
+    width : 800px;
+
+    &-inner {
+        padding : 10px;
+    }
+
+}
+
+.mod-dt {
+    .container {
+        margin-left : 0px;
+    }
+    .nodl {
+        margin-left : 14px;
+    }
+    .dt-reject {
+        @include fl;
+        margin-left : 20px;
+        display : none;
+        display : block;
+        margin-top : 10px;
+        color: #c7254e;
+        background-color: #f9f2f4;
+    }
+    &:hover {
+        .dt-reject {
+            display : block;
+        }
+    }
+}
+.m-btn-cts {
+    text-align : center;
+    border-top : 1px solid #edefed;
+    margin-top : 30px;
+    padding-top : 15px;
+    button {
+        margin-left : 20px;
+    }
+}
+.m-main .page-header {
+    margin-top : 0px;
+    h1 {
+        margin-top : 0px;
+    }
+}
+.map-con {
+    position : relative;
+    width : 600px;
+    height : 400px;
+    background-color : #eee;
+}
+
+.dl-reject {
+    margin-top : 20px;
+    textarea {
+        margin: 0px;
+        padding: 3px;
+        font-size: 14px;
+        word-wrap: break-word;
+        line-height: 18px;
+        border : 1px solid #ddd;
+        overflow-y: auto;
+        overflow-x: hidden;
+        outline: none;
+        background: transparent;
+        width: 600px;
+        height: 68px;
+        resize : none;
+
+    }
+}
+

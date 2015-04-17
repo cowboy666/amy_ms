@@ -1,0 +1,117 @@
+.g-pop-bg{display:none;position:fixed;width:100%;height:100%;z-index:900;background-color:#000;left:0px;top:0px;opacity:0.5;filter:Alpha(opacity=50);}
+.g_dlg_box {overflow : auto;top:0px;left:0px;overflow-x : hidden;}
+.g_dlg_wrap_css3 {
+
+}
+
+
+.m-pop {
+   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+   background-color : #fff; 
+   &-hd {
+        border-bottom : 1px solid #c9c9c9; 
+        background-color : #f6f6f6;
+        color : #000;
+        font-size : 16px;
+        height : 50px;
+        line-height : 50px;
+        padding-left: 15px;
+        @include clrfix;
+        .hd-close {
+            @include fr;
+            width : 15px;
+            height : 15px;
+            color : #666;
+            font-size : 24px;
+            line-height : 1em;
+            margin-right : 10px;
+            margin-top : 12px;
+            &:hover {
+                color : #f60;
+            }
+        }
+   }
+   .m-pop-ft {
+        .btn-wrap {
+            text-align : right;
+            padding : 10px 0px;
+            button {
+                height : 30px;
+                line-height : 30px;
+                width : 80px;
+                font-size : 14px;
+                background-color : #00cbcd;
+                color : #fff;
+                @include btn;
+                margin-right : 10px;
+            }
+        }
+   }
+}
+
+.m-pop-alert{
+    padding : 0px 10px;
+    .m-pop-bd {
+        padding : 10px;
+    }
+    .alert-ct {
+        width : 280px;
+    }  
+    .m-pop-ft {
+        border-top : 1px solid #c9c9c9; 
+        .btn-wrap {
+            text-align : center;
+            padding : 10px 0px;
+            button {
+                height : 24px;
+                line-height : 24px;
+                width : 80px;
+                font-size : 12px;
+                background-color : #00cbcd;
+                color : #fff;
+                @include btn;
+                margin-right : 10px;
+            }
+            .btn-cfr {
+                margin-right : 15px;
+            }
+            .btn-cancel {
+                
+            }
+        }
+   }
+}
+
+.m-dlg-form {
+    width: 360px;
+    margin-top : 15px;
+    .form-row {
+        color : #333;
+        padding : 5px 15px;
+        font-size : 14px;
+        @include  clrfix;
+        height : 30px;
+        line-height : 30px;
+        .lb, .desc , .winp {
+            @include fl;
+        }
+        .lb {
+            margin-right : 10px;
+        }
+        .winp {
+            .inp {
+                line-height : 22px;
+                border : 1px solid #cccccc;
+                width: 200px;
+                &:focus {
+                    outline : none;
+                }
+            } 
+        }
+    }
+    .m-alert-tip {
+        position : absolute;
+    }
+
+}
+

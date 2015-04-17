@@ -1,0 +1,42 @@
+ <tr>
+    <td>
+        ${order_no}
+    </td>
+    <td>
+        ${usr_id}
+    </td>    
+    <td>
+        ${usr_phone}
+    </td>    
+    <td>
+        ${shop_name}
+    </td>
+    <td>
+        ${prd_name}
+    </td>
+    <td>
+        ${price}
+    </td>
+    <td>
+        ${order_time}
+    </td>
+    <td>
+        ${service_time}
+    </td>
+    <td>
+        {@if pay == 1 }
+            支付宝
+        {@else if status == 2 }
+            微信
+        {@/if}
+    </td>
+    <td>
+        {@if status == 0 }
+            未付款
+        {@else if status == 1 }
+            已付款
+        {@else if status == 2}
+            已完成
+        {@/if}
+    </td>
+</tr>

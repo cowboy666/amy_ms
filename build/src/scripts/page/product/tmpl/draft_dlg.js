@@ -1,0 +1,7 @@
+(function() {
+  var template = juicer.template, templates = juicer.templates = juicer.templates || {};
+var tpl = templates['draft_dlg.tmpl'] = function(_, _method) {_method = juicer.options._method;
+'use strict';var _=_||{};var _out='';_out+=''; try { _out+=''; var div=_.div;var pop=_.pop;var hd=_.hd;var h=_.h;var title=_.title;var bd=_.bd;var border=_.border;var offline=_.offline;var draft=_.draft;var inner=_.inner;var items=_.items;var off=_.off;var pages=_.pages;var page=_.page;var ft=_.ft;var crop=_.crop;var btns=_.btns;var wrap=_.wrap;var button=_.button;var op=_.op; _out+='<div class="m-pop">     <div class="m-pop-hd">         <h4 class="hd-title">草稿箱</h4>     </div>     <div class="m-pop-bd no-border">         <div class="m-offline m-draft">             <div class="m-offline-inner">                  <div class="offline-items ai-off-items">                 </div>                 <div class="m-pages ai-off-page">                 </div>              </div>             </div>     </div>     <div class="m-pop-ft">         <div class="img-crop-btns btn-wrap">             <button class="img-op submit close">关闭</button>         </div>     </div> </div> '; } catch(e) {_method.__throw("Juicer Render Exception: "+e.message);} _out+='';return _out;
+};
+})();
+module.exports = juicer.templates['draft_dlg.tmpl'];

@@ -1,0 +1,161 @@
+.form-control {
+    color : #333;
+}
+.m-dbox {
+   .m-form {
+      .add-subject {
+        margin-left : 10px;
+      }  
+   } 
+}
+.m-add-subject-ct {
+    margin-left : 20px;
+    color : #ff6c60;
+}
+.m-sbox {
+    padding : 0px;
+    @include clrfix;
+}
+.add-btns {
+    line-height : 34px;
+}
+.m-radios {
+    .radio {
+        margin-top : 8px;
+        margin-bottom : 0px;
+        margin-right : 10px;
+    }
+}
+.m-prd-box {
+    @include clrfix;
+    .m-prd-search {
+        @include clrfix;
+    }
+}
+.m-drow {
+    @include clrfix;
+    margin-bottom : 10px;
+}
+.img-text, .p-text {
+    margin-top : 10px;
+}
+.form-group input{
+    color : #333;
+}
+.form-group textarea {
+    color : #333;
+}
+.p-text {
+    margin-top : 10px; 
+    textarea {
+        height : 120px;
+    }
+}
+.add-select-btn {
+    margin-left : 20px;
+}
+.item-list .nav {
+    margin-top : 0px;
+    .ind {
+        margin-right : 10px;
+    }
+    .item .fa {
+        width : 20px;
+        height : 20px;
+    }
+}
+.subject-list {
+    .subject-img-box {
+        width : 400px;
+        height : 200px;
+        overflow : hidden;
+        img {
+            width : 100%;
+        }
+    }
+    .sub-op {
+        margin-right : 25px;
+        height : 20px;
+        font-size : 14px;
+        color : #2DB6AC;
+    }
+}
+.m-subject-item-title {
+    .control-label {
+    }
+}
+.m-st-add-btns {
+    margin-left : 18%;
+    a {
+        color : #88a755;
+        margin-right : 20px;
+        font-weight : bold;
+    }
+}
+.subject-item-btns {
+    margin-top : 20px;
+    .btn-primary {
+        margin-left : 18%;
+    }
+}
+.m-subject-items {
+    .img-box {
+        display : none ;
+        margin-top: 10px;
+        width : 100%;
+        height : 150px;
+        overflow : hidden;
+        .img-wrap {
+            vertical-align : middle;
+            display : table-cell;
+        }
+        img {
+            width : 100%;
+        }
+    }
+}
+.m-st-ps {
+    .twt-feed {
+        padding : 10px;
+    }
+    .twt-feed .wtt-mark {
+        display : none;
+    }
+    .twt-feed a {
+        margin : 0px;
+        float : none;
+        display : block;
+        img {
+            width : 100%;
+            height : auto;
+            @include border-radius(0px);
+        }
+    }
+}
+.m-subject-items .m-p-textarea {
+    height : 150px;
+    font-size : 12px;
+}
+.m-tools {
+    a {
+        margin-left: 10px;
+        color: #a7a7a7;
+        font-size: 12px;
+    }
+    
+    
+}
+.m-st-logo-img {
+    overflow : hidden;
+    display :none;
+    img {
+        width : 100%;
+    }
+
+}
+.m-sbt-logo {
+    overflow : hidden;
+    img {
+        width : 100%;
+    }
+}

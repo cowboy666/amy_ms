@@ -1,0 +1,235 @@
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-horizontal   - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Right: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -   box                     - arguments: Orientation: horizontal, Pack: center, Align: center
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+    -   flex                    - arguments: Value: 1
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - Default arguments: What: all, Length: 1s, Easing: ease-in-out
+    -                            - Examples: @include transition (all 2s ease-in-out);
+    -                                        @include transition (opacity 1s ease-in 2s, width 2s ease-out);
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND HORIZONTAL */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+  color: #333; }
+
+.bs-docs-nav {
+  border-bottom: 1px solid #563d7c;
+  background-color: #fff;
+  margin-bottom: 0px; }
+
+.bs-docs-nav .navbar-brand, .bs-docs-nav .navbar-nav > li > a {
+  font-weight: 500;
+  color: #563d7c; }
+
+body {
+  background-color: #F3F7FA; }
+
+.m-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #767676;
+  text-align: center;
+  background-color: #F3F7FA;
+  height: 80px; }
+
+.m-main {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  min-height: 600px; }
+
+.m-login {
+  /***
+    * position : absolute;
+    * top : 75px;
+    * right : 0px; 
+    **/
+  background-color: rgba(0, 0, 0, 0.3);
+  margin-top: 35px;
+  margin-bottom: 45px;
+  color: #fff;
+  float: right;
+  _display: inline; }
+  .m-login label {
+    margin-bottom: 0px; }
+  .m-login .m-inps {
+    padding: 42px 58px 28px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px; }
+    .m-login .m-inps .inpc {
+      border: 1px solid #dbdbdb;
+      -webkit-border-radius: 3px;
+      -khtml-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px;
+      overflow: hidden; }
+      .m-login .m-inps .inpc label {
+        float: left;
+        _display: inline;
+        width: 46px;
+        height: 46px; }
+      .m-login .m-inps .inpc input {
+        color: #555;
+        font-size: 24px;
+        float: left;
+        _display: inline;
+        width: 238px;
+        height: 46px;
+        line-height: 46px;
+        border: 0px;
+        padding: 0px 0px 0px 10px; }
+        .m-login .m-inps .inpc input:focus {
+          outline: none; }
+    .m-login .m-inps .uname {
+      margin-bottom: 10px; }
+      .m-login .m-inps .uname label {
+        background: #f7f7f7 url('http://amilystatic.me/image/sprit.png') no-repeat 8px -153px; }
+    .m-login .m-inps .upwd label {
+      background: #f7f7f7 url('http://amilystatic.me/image/sprit.png') no-repeat -42px -152px; }
+    .m-login .m-inps .btn-wrap {
+      margin-top: 24px; }
+    .m-login .m-inps .btn-submit {
+      cursor: pointer;
+      background: #f9903c;
+      color: #fff;
+      border: 0px;
+      height: 48px;
+      line-height: 48px;
+      width: 286px;
+      font-size: 24px;
+      -webkit-border-radius: 3px;
+      -khtml-border-radius: 3px;
+      -moz-border-radius: 3px;
+      -ms-border-radius: 3px;
+      -o-border-radius: 3px;
+      border-radius: 3px; }
+  .m-login .m-u-op {
+    margin-top: 15px;
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    font-size: 24px; }
+    .m-login .m-u-op .l {
+      margin-left: 15px;
+      color: #4d4d4d;
+      float: left;
+      _display: inline; }
+      .m-login .m-u-op .l input {
+        visibility: hidden; }
+      .m-login .m-u-op .l label {
+        line-height: 64px; }
+      .m-login .m-u-op .l .chbox {
+        cursor: pointer;
+        height: 32px;
+        width: 34px;
+        vertical-align: middle;
+        display: inline-block;
+        _display: inline;
+        _zoom: 1;
+        background: url('http://amilystatic.me/image/sprit.png') no-repeat -167px -159px; }
+      .m-login .m-u-op .l .checked {
+        background: url('http://amilystatic.me/image/sprit.png') no-repeat -128px -159px; }
+    .m-login .m-u-op .r {
+      float: right;
+      _display: inline;
+      line-height: 64px;
+      margin-right: 56px; }
+
+.bs-docs-nav {
+  margin-bottom: 20px; }
+
+.m-footer {
+  margin-bottom: 20px; }
+
+.m-main {
+  height: 600px; }
+
+.m-main-inner {
+  position: relative;
+  padding: 30px 15px;
+  padding-top: 60px;
+  color: #cdbfe3;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+  background-color: #6f5499;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
+  background-image: -webkit-linear-gradient(top, #563d7c 0, #6f5499 100%);
+  background-image: -o-linear-gradient(top, #563d7c 0, #6f5499 100%);
+  background-image: linear-gradient(to bottom, #563d7c 0, #6f5499 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background-repeat: repeat-x; }

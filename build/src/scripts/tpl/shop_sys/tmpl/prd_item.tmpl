@@ -1,0 +1,27 @@
+ <tr>
+    <td>
+        ${ind_txt}
+    </td>
+    <td>
+        ${name}
+    </td>    
+    <td>
+        ${create_time}
+    </td>
+    <td>
+        ${operator}
+    </td>
+    <td>
+        {@if status == 0 }
+            未审核
+        {@else if status == 1 }
+            审核通过
+        {@else if status == 3}
+            审核未通过
+        {@/if}
+    </td>
+    <td>
+        <a href="/m/prd?id=${prd_id}" class= "glyphicon glyphicon-pencil"></a>
+    </td>
+</tr>
+

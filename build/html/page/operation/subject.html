@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Amily后台－专题列表维护</title>
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" >
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" type="text/css" >
+        <link rel="stylesheet" href="http://amilystatic.me/ms/styles/group_label.css" type="text/css" >
+    </head>
+    <body>
+         <!--#include file="/include/head.html" -->
+        <div class="m-main" id="main">
+            <div class="m-nav" id="m-nav">
+                <div class="container">
+                    <ul class="nav nav-tabs ">
+                        <li role="presentation" ><a href="/m/group_label">标签类别维护</a></li>
+                        <li role="presentation" class="active"><a href="javascript:;">专题列表运营</a></li>
+                        <li role="presentation" ><a href="/m/operation/subject_item">专题运营</a></li>
+                    </ul>
+                 </div>
+             </div>
+            <div class="container ">
+                <div class="m-gl">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="搜索专题">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" id="search-subject-btn">搜索</button>
+                                </span>
+                            </div>
+                        </div>    
+                        <div class="col-md-2 ">
+                                <button class="btn btn-primary" type="button">添加专题</button>
+                        </div>    
+                    </div>
+                    <div class="row">
+                        <div class="panel-body">
+                            <div class="panel-hd">
+                                专题列表
+                            </div>    
+                            <div class="m-list-ct" id="list-ct">
+                                <table class="table">
+                                    <tr>
+                                        <th>序号</th>
+                                        <th>专题名</th>
+                                        <th>创建时间</th>
+                                        <th>创建者</th>
+                                        <th>状态</th>
+                                        <th>操作</th>
+                                    </tr>    
+                                    <tbody class="ai-list">
+                                    </tbody>    
+                                </table> 
+                            </div>
+                            <div class="m-pages ai-page">
+
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--#include file="/include/foot.html" -->
+    </body>
+    <script src="http://cdn.bootcss.com/jquery/2.1.2/jquery.min.js" ></script>    
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js" ></script>
+    
+</html>    

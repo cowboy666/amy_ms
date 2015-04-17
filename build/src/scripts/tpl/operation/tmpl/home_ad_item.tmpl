@@ -1,0 +1,71 @@
+ <div class="row">
+    <div class="col-lg-12">
+        <div class="panel clearfix">
+            <div class="panel-heading">
+                首页轮播
+                <span class="m-tools pull-right">
+                        <a class="fa fa-times" href="javascript:;"></a>
+                </span>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-7">
+                    <div class="m-form " style="margin-right:20px;">
+                        <form class="form-horizontal" id="subject_form">
+                            <div class="form-group">
+                                <label for="subject_logo" class="col-sm-3 control-label" >图片</label>
+                                <div class="col-sm-9 input-group">
+                                    <input type="text" class="form-control" name="image_url" placeholder="可以填链接也可以上传">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary js-upload"  type="button" >上传图片</button>
+                                     </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label  class="col-sm-3 control-label" >上下线状态</label>
+                                <div class="col-sm-4  control-label" style="text-align:left;">
+                                    <label for="status_1_0">
+                                    下线
+                                    <input type="radio" value="0" name ="status_0" id="status_1_0">
+                                    </label>
+                                    <label for="statis_1_1" style="margin-left:20px;">
+                                    上线
+                                    <input type="radio" value="1" name ="status_0" id="status_1_1">
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3 control-label" >类型</div>
+                                <div class="col-sm-2 control-label" style="text-align:left;">
+                                    <select class="js-type">
+                                        <option>专题</option>
+                                        <option>产品</option>
+                                        <option>商铺</option>
+                                    </select>    
+                                </div>
+                                <div class="col-sm-5 control-label" style="text-align:left;">
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li> ID:<input type="text" value="" name="id" ></li>
+                                    </ul>    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div  class="col-sm-3 control-label" >备注：</div>
+                                <div class="col-sm-9 input-group">
+                                    <input type="text" class="form-control" name="text">
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary save-btn" style="margin-left: 25%; margin-right : 25px;">保存</button>
+                        </form>
+                    </div>  
+                 </div>
+                 <div class="col-sm-5">
+                     <div class="img-wrap js-imgbox">
+                         
+                     </div>
+                 </div>    
+            </div>
+        </div>
+    </div>
+</div>
+

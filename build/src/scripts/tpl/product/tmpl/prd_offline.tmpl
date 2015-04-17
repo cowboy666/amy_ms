@@ -1,0 +1,11 @@
+{@each list as it, index}
+<li data-ind="${index}">
+    <div class="order-no order-ind">${+index + 1}</div>
+    <div class="order-prd" ><a href="javascript:;" >${it.name}</a></div>
+    <div class="order-del"><i class="del"></i></div>
+    <div class="order-online"><i class="online"></i></div>
+    {@if typeof it.status !=="undefined"}
+    <div class="order-status">${it.checkStatus|status_text}</div> 
+    {@/if}
+</li>
+{@/each}

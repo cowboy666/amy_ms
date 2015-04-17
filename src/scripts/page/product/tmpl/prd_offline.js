@@ -1,0 +1,7 @@
+(function() {
+  var template = juicer.template, templates = juicer.templates = juicer.templates || {};
+var tpl = templates['prd_offline.tmpl'] = function(_, _method) {_method = juicer.options._method;
+'use strict';var _=_||{};var _out='';_out+=''; try { _out+=''; var list=_.list;var index=_.index;var it=_.it;var li=_.li;var ind=_.ind;var div=_.div;var no=_.no;var prd=_.prd;var a=_.a;var del=_.del;var i=_.i;var online=_.online;var status=_.status;var status_text=_.status_text; _out+=''; ~function() {for(var i0 in list) {if(list.hasOwnProperty(i0)) {var it=list[i0];var  index=i0; _out+=' <li data-ind="';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(index)) ;_out+='">     <div class="order-no order-ind">';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(+index + 1)) ;_out+='</div>     <div class="order-prd" ><a href="javascript:;" >';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(it.name)) ;_out+='</a></div>     <div class="order-del"><i class="del"></i></div>     <div class="order-online"><i class="online"></i></div>     '; if(typeof it.status !=="undefined") { _out+='     <div class="order-status">';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(_method.status_text.call({}, it.checkStatus))) ;_out+='</div>      '; } _out+=' </li> '; }}}(); _out+=' '; } catch(e) {_method.__throw("Juicer Render Exception: "+e.message);} _out+='';return _out;
+};
+})();
+module.exports = juicer.templates['prd_offline.tmpl'];

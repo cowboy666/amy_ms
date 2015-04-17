@@ -1,0 +1,169 @@
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-horizontal   - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Right: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -   box                     - arguments: Orientation: horizontal, Pack: center, Align: center
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+    -   flex                    - arguments: Value: 1
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - Default arguments: What: all, Length: 1s, Easing: ease-in-out
+    -                            - Examples: @include transition (all 2s ease-in-out);
+    -                                        @include transition (opacity 1s ease-in 2s, width 2s ease-out);
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND HORIZONTAL */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+  color: #333; }
+
+.bs-docs-nav {
+  border-bottom: 1px solid #563d7c;
+  background-color: #fff;
+  margin-bottom: 0px; }
+
+.bs-docs-nav .navbar-brand, .bs-docs-nav .navbar-nav > li > a {
+  font-weight: 500;
+  color: #563d7c; }
+
+body {
+  background-color: #F3F7FA; }
+
+.m-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #767676;
+  text-align: center;
+  background-color: #F3F7FA;
+  height: 80px; }
+
+.m-main {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  min-height: 600px; }
+
+.m-pages {
+  overflow: hidden;
+  color: #8d8d8d; }
+  .m-pages .pages {
+    float: right;
+    _display: inline; }
+    .m-pages .pages em {
+      background-color: #f5f5f5;
+      display: inline-block;
+      color: #666;
+      padding: 0 9px;
+      height: 25px;
+      border: 0;
+      margin-left: 8px;
+      text-align: center;
+      line-height: 25px; }
+    .m-pages .pages .pg-item {
+      color: #8d8d8d;
+      display: inline-block;
+      padding: 0 8px;
+      height: 23px;
+      text-align: center;
+      line-height: 25px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      margin-left: 8px; }
+
+.m-list-hd {
+  zoom: 1; }
+  .m-list-hd:after {
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "."; }
+  .m-list-hd .m-list-title {
+    float: left;
+    _display: inline; }
+    .m-list-hd .m-list-title .hd {
+      margin: 0px;
+      font-size: 16px;
+      line-height: 30px; }
+  .m-list-hd .m-s-group {
+    float: right;
+    _display: inline; }
+
+.m-list .pagination {
+  float: right;
+  _display: inline;
+  margin: 0px 20px 10px; }
+
+.m-pages {
+  padding: 0px 20px 10px 0px; }
+  .m-pages i, .m-pages em {
+    font-style: normal; }
+
+.no-result {
+  padding: 20px;
+  padding-bottom: 40px;
+  text-align: center;
+  font-size: 16px; }
+
+.m-main {
+  background-color: transparent; }

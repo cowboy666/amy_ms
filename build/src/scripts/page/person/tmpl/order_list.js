@@ -1,0 +1,7 @@
+(function() {
+  var template = juicer.template, templates = juicer.templates = juicer.templates || {};
+var tpl = templates['order_list.tmpl'] = function(_, _method) {_method = juicer.options._method;
+'use strict';var _=_||{};var _out='';_out+=''; try { _out+=''; var list_html=_.list_html;var div=_.div;var dlg=_.dlg;var form=_.form;var odr=_.odr;var dt=_.dt;var inner=_.inner;var hd=_.hd;var date=_.date;var no=_.no;var stime=_.stime;var name=_.name;var phone=_.phone;var person=_.person;var ul=_.ul; _out+='<div class="m-dlg-form m-odr-dt-dlg">             <div class="m-odr-dt">                 <div class="dt-inner">                     <div class="row row-hd">                         <div class="col ord-date">日期</div>                         <div class="col ord-no">订单号</div>                         <div class="col u-stime">预约时间</div>                         <div class="col prd-name">商品名</div>                         <div class="col u-name">用户名</div>                         <div class="col u-phone">用户手机</div>                         <div class="col u-person">分配员工</div>                     </div>                     <ul>                        ';_out+= (_method.__escapehtml.detection(list_html)) ;_out+='                      </ul>                 </div>             </div>     </div>\' '; } catch(e) {_method.__throw("Juicer Render Exception: "+e.message);} _out+='';return _out;
+};
+})();
+module.exports = juicer.templates['order_list.tmpl'];

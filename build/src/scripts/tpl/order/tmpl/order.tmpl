@@ -1,0 +1,40 @@
+<li class="m-odr {@if (+index+1) % 2} odd {@/if}">
+    <div class="col cn">
+        <div class="bct">
+            服务项目:${prd_name}<br/>
+            订单时间: ${order_time}
+        </div>
+        <i class="vt"></i>
+    </div>
+    <div class="col cu">
+        <div class="bct">
+            用户名:${c_name}<br/>
+            联系方式:${c_phone}
+        </div>
+        <i class="vt"></i>
+    </div>
+    <div class="col cjt">
+        <div class="bct">
+            匹配技师:${j_name}<br/>
+            服务时长:${j_dur}
+        </div>
+        <i class="vt"></i>
+    </div>
+    <div class="col cst">
+        <div class="bct">
+            预约时间:${r_time}
+        </div>
+        <i class="vt"></i>
+    </div>
+    <div class="col cbtn">
+        <div class="bct">
+            {@if status == 0 }
+            <button class="btn btn-st ai-start-service">开始服务</button>
+            {@else}
+            <button class="btn btn-end ">已完成</button>
+            {@/if}
+        </div>
+        <i class="vt"></i>
+    </div>
+</li> 
+

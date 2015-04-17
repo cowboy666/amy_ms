@@ -1,0 +1,41 @@
+<li class="m-cmt-box">
+    <div class="m-cmt-main">
+        <div class="cmt-wrap">
+            <div class="cmt-hd">
+                <div class="cms u-stars"><div class="stars star${star}"><div class="stars-inner"></div></div></div>
+                <div class="cms odr-no">订单号:<span>${order_no}</span></div>
+                <div class="cms">|</div>
+                <div class="cms u-name">用户名:<span>${cus_name}</span></div>
+                <div class="cms">|</div>
+                <div class="cms u-time">时间:<span>${cmt_date}</span></div>
+                <div class="cms">|</div>
+            </div>
+            <div class="cmt-ct">
+                <div class="cmt-txt">
+                    ${cmt_content}
+                </div>
+                {@if reply }
+                    <div class="cmt-reply-box">
+                        <p class="reply-con">
+                            ${reply}
+                        </p>
+                    </div>
+                {@else}
+                    <div class="cmt-reply-box">
+                        <div class="reply">
+                            <textarea class="ai-reply-cnt"></textarea>
+                        </div>
+                        <div class="btn-wrap">
+                            <button class="btn ai-reply" >回复</button>
+                        </div>    
+                    </div>
+                {@/if}
+            </div>
+        </div>
+    </div>
+    <div class="m-usr">
+        <div class="m-usr-logo">
+            <img src="http://tp4.sinaimg.cn/1249159055/180/5719639257/0" >
+        </div>    
+    </div>
+</li>

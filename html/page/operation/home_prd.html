@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Amily后台－专题编辑</title>
+        <!--#include file="/include/ext_source.html" -->
+    </head>
+    <body>
+        <section id="container">
+            <!--#include file="/include/ext_head.html" -->
+            <div class="m-main">
+                <!--#include file="/include/ext_aside.html" -->
+                <section id="main-content">
+                    <section class="wrapper">
+                         <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel clearfix">
+                                    <div class="panel-heading">搜索商品或者商户信息
+                                        <span class="tools pull-right">
+                                                <a class="fa fa-chevron-down" href="javascript:;"></a>
+                                        </span>
+                                    </div>
+                                    <div class="panel-body" >
+                                        <!--#include file="/include/prd_box.html" -->
+                                    </div>    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="record-prds">
+                            <div class="col-md-6">
+                                <div class="panel clearfix">
+                                    <div class="panel-heading">人工推荐商品</div>
+                                    <div class="panel-body" id="ai-op-rec">
+                                        <div class="dd item-list ">
+                                            <ol class="nav nav-pills nav-stacked mail-nav items">
+                                            </ol>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="btns-wrap clearfix">
+                                            <button type="button" id="user-save" class="btn btn-primary pull-right">保存</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="panel clearfix">
+                                    <div class="panel-heading">
+                                        自动推荐商品
+                                        <div class="pull-right">
+                                            版本号:
+                                            <select class="select" id="rec-version">
+                                                <option value="最新">最新版本</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="panel-body" id="ai-auto-rec">
+                                        <div class="dd item-list ">
+                                            <ol class="nav nav-pills nav-stacked mail-nav items dd-list">
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                    </section>
+                </section>    
+            </div>    
+        </section>
+    </body>
+    <script >
+        document.getElementById("operation-nav").className ="active";
+    </script>
+    <!--#include file="/include/ext_script.html" -->
+    <script src="http://amilystatic.me/ms/ext_source/js/Sortable.js"></script>
+    <script src="http://amilystatic.me/ms/scripts/page/home_prd.js" ></script>
+</html>    
+

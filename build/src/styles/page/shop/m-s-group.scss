@@ -1,0 +1,33 @@
+.m-main {
+    h3 {
+        margin-top : 0px;
+    }
+}
+
+.m-gl {
+    margin-top: 20px;
+    width : 800px;
+    margin-left : 0px;
+}
+.m-group-add {
+    padding : 0px 0px 15px;
+}
+
+.m-groups {
+    li {
+        cursor : pointer;
+    }
+    li.active {
+        a {
+            color : #fff;
+        }
+    }
+}
+.lborder  {
+    border-left : 1px solid #1b809e;
+    margin-left : -1px;
+}
+.rborder {
+    border-right : 1px solid #1b809e;
+}
+

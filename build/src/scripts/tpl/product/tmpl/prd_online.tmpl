@@ -1,0 +1,20 @@
+{@each list as item, index}
+    <li class="prd-item" data-id="${item.id}">
+        <div class="prd-item-inner">
+            <div class="img-wrap">
+                <img src="${item.image}" />
+            </div>    
+            <div class="bt-bar">
+                <div class="bt-bar-bg">
+                </div>
+                <div class="bt-bar-inner">
+                    <div class="s-op s-left"></div>
+                    <div class="s-op s-off"></div>
+                    <div class="s-op s-rm"></div>
+                    <div class="s-op s-right"></div>
+                </div>
+            </div>
+        </div>
+        <h4 class="prd-title">${item.name}</h4>
+    </li>
+{@/each}

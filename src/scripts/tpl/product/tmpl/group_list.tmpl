@@ -1,0 +1,27 @@
+<div class="m-group-table-box" >
+    <table class="m-group-table">
+        <thead>
+            <tr>
+                <th class="grp-no no-l-b">编号</th>
+                <th class="grp-name ">名称</th>
+                <th class="grp-time">创建时间</th>
+                <th class="grp-num">商品数</th>
+                <th class="grp-rank" colspan="2" >排序</th>
+                <th class="grp-del">删除</th>
+            </tr>  
+        </thead>
+        <tbody>
+            {@each list as item ,index}
+                <tr data-num="${item.productNum}" data-id="${item.id}">
+                    <td class="no-l-b">${+index + 1}</td>
+                    <td>${item.name}</td>
+                    <td>${item.createTimeStr}</td>
+                    <td>${item.productNum}</td>
+                    <td width="50"><a href="#" class="rank-up">up</a></td>
+                    <td ><a href="#" class="rank-down">down</a></td>
+                    <td><a href="#" class="del-btn">del</a></td>
+                </tr>    
+            {@/each}
+        </tbody>    
+    </table>   
+</div>

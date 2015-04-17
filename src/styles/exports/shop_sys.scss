@@ -1,0 +1,12 @@
+@charset "utf-8";
+@import "../core/css3-mixins.scss";
+@import "../core/g_vars.scss";
+@import "../mod/base.scss";
+@import "../mod/head.scss";
+@import "../mod/foot.scss";
+@import "../mod/page_nav.scss";
+@import "../mod/pager.scss";
+@import "../page/shop/m-s-list.scss";
+.m-main {
+    background-color : transparent;
+}

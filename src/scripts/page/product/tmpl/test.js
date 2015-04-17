@@ -1,0 +1,7 @@
+(function() {
+  var template = juicer.template, templates = juicer.templates = juicer.templates || {};
+var tpl = templates['test.tmpl'] = function(_, _method) {_method = juicer.options._method;
+'use strict';var _=_||{};var _out='';_out+=''; try { _out+=''; var list=_.list;var blah=_.blah;var it=_.it;var index=_.index;var it2=_.it2;var ul=_.ul;var li=_.li;var num=_.num;var br=_.br; _out+='<ul>     '; ~function() {for(var i0 in list) {if(list.hasOwnProperty(i0)) {var it=list[i0];var index=i0; _out+='         <li>';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(it.name)) ;_out+=' (index: ';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(index)) ;_out+=')</li>     '; }}}(); _out+='     '; ~function() {for(var i1 in blah) {if(blah.hasOwnProperty(i1)) {var it=blah[i1]; _out+='         <li>             num: ';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(it.num)) ;_out+=' <br />             '; if(it.num==3) { _out+='                 '; ~function() {for(var i2 in it.inner) {if(it.inner.hasOwnProperty(i2)) {var it2=it.inner[i2]; _out+='                     ';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(it2.time)) ;_out+=' <br />                 '; }}}(); _out+='             '; } _out+='         </li>     '; }}}(); _out+=' </ul> '; } catch(e) {_method.__throw("Juicer Render Exception: "+e.message);} _out+='';return _out;
+};
+})();
+module.exports = juicer.templates['test.tmpl'];

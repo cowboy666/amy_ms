@@ -1,0 +1,7 @@
+(function() {
+  var template = juicer.template, templates = juicer.templates = juicer.templates || {};
+var tpl = templates['img_content.tmpl'] = function(_, _method) {_method = juicer.options._method;
+'use strict';var _=_||{};var _out='';_out+=''; try { _out+=''; var div=_.div;var group=_.group;var row=_.row;var label=_.label;var sm=_.sm;var input=_.input;var control=_.control;var span=_.span;var btn=_.btn;var button=_.button;var primary=_.primary;var upload=_.upload;var text=_.text;var textarea=_.textarea;var box=_.box;var wrap=_.wrap;var img=_.img;var btns=_.btns;var a=_.a;var del=_.del;var i=_.i;var times=_.times; _out+=' <div class="form-group  ai-row">     <label class="col-sm-2 control-label">图片</label>     <div class="col-sm-6">         <div class="input-group">             <input type="text" class="form-control">             <span class="input-group-btn">                 <button class="btn btn-primary img-upload-btn"  type="button">上传图片</button>             </span>         </div>             <div class="img-text">             <textarea class="form-control" placeholder="图片描述"></textarea>         </div>             <div class="img-box">             <div class="img-wrap">                 <img src="" >             </div>             </div>     </div>     <div class="col-sm-4 add-btns " >         <a href="#" class="add-del" ><i class="fa fa-times"></i>删除</a>     </div> </div>  '; } catch(e) {_method.__throw("Juicer Render Exception: "+e.message);} _out+='';return _out;
+};
+})();
+module.exports = juicer.templates['img_content.tmpl'];

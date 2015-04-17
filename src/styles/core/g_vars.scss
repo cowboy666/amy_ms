@@ -1,0 +1,80 @@
+$img_host : "http://amilystatic.me/image";
+
+@mixin clr { clear : both; height:0; overflow:hidden; }
+@mixin clrfix {
+    zoom : 1;
+    &:after { clear:both; display:block; height:0; visibility:hidden; content:"."; }
+}
+
+@mixin box-shadow($shadow...){
+  -webkit-box-shadow:$shadow;
+  -moz-box-shadow:$shadow;
+  box-shadow:$shadow;
+}
+@mixin fl {
+    float : left;
+    _display:inline;
+
+}
+@mixin fr {
+    float : right;
+    _display:inline;
+}
+
+@mixin inline-block {
+    display : inline-block;
+    _display : inline;
+    _zoom : 1;
+}
+
+
+@mixin btn {
+    border : 0px;
+    cursor : pointer;
+    @include border-radius(5px);
+    &:focus {
+        outline : none;
+    }
+}
+
+@mixin triangle {
+    height:0;
+    width:0;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    display : block;
+}
+@mixin triangle-top($c,$w) {
+     @include triangle;
+     border-color:$c transparent transparent transparent;
+     border-style:solid dashed dashed dashed;
+     border-width:$w;
+}
+@mixin triangle-bottom($c,$w) {
+     @include triangle;
+     border-color:transparent transparent $c transparent;
+     border-style:dashed dashed solid dashed;
+     border-width:$w;
+}
+@mixin triangle-left($c,$w) {
+     @include triangle;
+     border-color:transparent transparent transparent $c;
+     border-style:dashed dashed dashed solid;
+     border-width:$w;
+}
+@mixin triangle-right($c,$w) {
+     @include triangle;
+     border-color:transparent $c transparent transparent;
+     border-style:dashed solid dashed dashed;
+     border-width:$w;
+}
+
+@mixin unselectable {
+   -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none; 
+}
+

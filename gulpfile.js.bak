@@ -1,0 +1,128 @@
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var rename = require("gulp-rename");
+var watch = require("gulp-watch");
+//var browserify = require('gulp-browserify'); 
+var rsync = require('gulp-rsync');
+var sassGraph = require('gulp-sass-graph');
+
+var gutil = require('gulp-util');
+var sourcemaps = require('gulp-sourcemaps');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var watchify = require('watchify');
+var browserify = require('browserify');
+
+var juicer_tpl = require('./gulp_plugin/juicer_tpl');
+
+gulp.task('sass', function () {
+    gulp.src('./src/styles/exports/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('./dist/styles'));
+});
+
+var bundle_js = ["index.js",
+                 "shop_sys.js",
+                 "prd_list.js",
+                 "shop.js",
+                 "product.js",
+                 "order_list.js",
+                 "group_label.js",
+                 "home_prd.js",
+                 "subject_list.js",
+                 "subject_add.js",
+                 "subject_item_edit.js",
+                 "home_ad.js"
+                 ];
+
+gulp.task("js",function(){
+   var src_dir = "./src/scripts/page/";
+   function wrap(bundler,src){
+       return function() {
+               return bundler.bundle()
+               .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+               .pipe(source(src))
+               .pipe(buffer())
+               .pipe(sourcemaps.init({loadMaps: true})) // loads map from browserify file
+               .pipe(sourcemaps.write('./')) // writes .map file
+               .pipe(gulp.dest('./dist/scripts/page'));
+       }
+   }
+   bundle_js.forEach(function(src,i){
+        var bundler = watchify(browserify(src_dir+src, watchify.args));
+        bundler.transform('brfs');
+        var bundle = wrap(bundler,src);
+        bundle();
+        bundler.on("update",bundle);
+   });
+});
+
+
+gulp.task('js_lib', function() {
+    gulp.src('./src/scripts/lib/*.js')
+        .pipe(gulp.dest('./dist/scripts/lib'));
+});
+
+gulp.task('tmpl',function(){
+    gulp.src('./src/scripts/tpl/**/*.tmpl')
+        .pipe(juicer_tpl())
+        .pipe(rename(function(path){
+            path.extname = ".js";
+        }))
+        .pipe(gulp.dest('./src/scripts/page'));
+    
+});
+
+
+/***
+gulp.task('scripts', function() {
+    // Single entry point to browserify 
+    gulp.src('src/scripts/page/index/index.js')
+        .pipe(browserify({
+          debug : true
+        }))
+        .pipe(gulp.dest('dist/scripts'))
+});
+***/
+
+gulp.task('watch',['js'], function () {
+   gulp.start('sass');
+   gulp.start('tmpl');
+   
+   //watch('./src/styles/**/*.scss', function(){
+   //    gulp.start('sass');
+   //});
+
+   watch('./src/styles/**/*.scss')
+   //function(){
+    .pipe(sassGraph("./src/styles/exports/*.scss"))
+    .pipe(sass("./src/styles/exports/*.scss"))
+    .pipe(notify('Sass compiled <%= file.relative %>'))
+    .pipe(gulp.dest('./dist/styles'));
+   //})
+
+   watch('./src/scripts/tpl/**/*.tmpl', function(){
+       gulp.start('tmpl');
+   });
+
+});
+
+
+ 
+gulp.task('deploy', function() {
+  gulp.src(['./dist/**','./src/**','./html/**','./image/**','!./image/**/*.psd'], { base: './' })
+      .pipe(gulp.dest('./build/'))
+      .pipe(rsync({
+          root: 'build',
+          username :'root',
+          hostname: '125.39.220.37',
+          destination: '/home/www/amily_ms_web/',
+          progress: true,
+          relative : true,
+          emptyDirectories: true,
+          recursive: true,
+          clean: true,
+          exclude: ['.DS_Store','.svn']
+    }));
+});
+

@@ -1,0 +1,94 @@
+$trg-out-w : 8px;
+$trg-in-w : 7px;
+
+.m-tip {
+    position : relative;
+    margin-top : 8px;
+    .m-tip-trg {
+        position : absolute;
+        top : -13px;
+        left : 20px;
+        .trg-in {
+            position : absolute;
+            top : 0px;
+            left : 0px;
+        }
+        .trg-out {
+            position : absolute;
+            top : -2px;
+           left : -1px;
+        }
+    } 
+
+    .m-tip-content {
+        border : 1px solid #faebcc;
+        background-color : #fcf8e3;  
+        color : #8a6d3b;
+        @include border-radius(5px);
+        p {
+          line-height : 1.5em;
+          padding : 5px;   
+        }
+    }
+}
+
+.m-up-tip {
+    .m-tip-trg {
+      .trg-in {
+          @include triangle-bottom(#fcf8e3,$trg-in-w);
+      }
+      .trg-out {
+          @include triangle-bottom(#faebcc,$trg-out-w);
+      }
+    }   
+}
+.m-down-tip {
+    margin-top : 0px;
+    .m-tip-trg {
+        position : absolute;
+        top : auto;
+        left : 20px;
+        bottom : -13px;
+        .trg-in {
+            @include triangle-top(#fcf8e3,$trg-in-w);
+        }
+        .trg-out {
+            @include triangle-top(#faebcc,$trg-out-w);
+        }
+        .trg-in {
+            position : absolute;
+            top : auto;
+            left : 0px;
+            bottom:0px;
+        }
+        .trg-out {
+            position : absolute;
+            top : auto;
+            left : -1px;
+            bottom : -2px;
+        }
+
+    }
+
+}
+
+
+.m-alert-tip {
+    .m-tip-trg {
+        .trg-in {
+            @include triangle-bottom(#f2dede,$trg-in-w);
+        }
+        .trg-out {
+            @include triangle-bottom(#ebccd1,$trg-out-w);
+        }
+    }
+    .m-tip-content {
+        color : #a94442;
+        font-size : 12px;
+        border : 1px solid #ebccd1;
+        background-color : #f2dede;
+    }
+
+
+
+}

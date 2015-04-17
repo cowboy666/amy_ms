@@ -1,0 +1,7 @@
+(function() {
+  var template = juicer.template, templates = juicer.templates = juicer.templates || {};
+var tpl = templates['shop_pf.tmpl'] = function(_, _method) {_method = juicer.options._method;
+'use strict';var _=_||{};var _out='';_out+=''; try { _out+=''; var name=_.name;var address=_.address;var telephone=_.telephone;var div=_.div;var prd=_.prd;var box=_.box;var st=_.st;var ps=_.ps;var feed=_.feed;var bg=_.bg;var h=_.h;var ul=_.ul;var pills=_.pills;var stacked=_.stacked;var li=_.li;var span=_.span; _out+='<div class="ai-prd-box m-st-ps">     <div class="twt-feed blue-bg">         <h3 style="display:block">             ';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(name)) ;_out+='         </h3>     </div>     <ul class="nav nav-pills nav-stacked">         <li><span>商家地址:</span>';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(address)) ;_out+='</li>         <li><span>商家电话:</span>';_out+= _method.__escapehtml.escaping(_method.__escapehtml.detection(telephone)) ;_out+='</li>     </ul>                                                </div>  '; } catch(e) {_method.__throw("Juicer Render Exception: "+e.message);} _out+='';return _out;
+};
+})();
+module.exports = juicer.templates['shop_pf.tmpl'];

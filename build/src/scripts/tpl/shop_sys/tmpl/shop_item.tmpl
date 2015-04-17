@@ -1,0 +1,29 @@
+ <tr>
+    <td>
+        ${ind_txt}
+    </td>
+    <td>
+        ${name}
+    </td>    
+    <td>
+        ${create_time}
+    </td>
+    <td>
+        ${operator}
+    </td>
+    <td>
+        {@if status == 0 }
+            填写中
+        {@else if status == 1 }
+            待审核
+        {@else if status == 2}
+            审核通过
+        {@else if status == 3}
+            未通过审核
+        {@/if}
+    </td>
+    <td>
+        <a href="/m/shop?id=${shop_id}" class= "glyphicon glyphicon-pencil"></a>
+    </td>
+</tr>
+

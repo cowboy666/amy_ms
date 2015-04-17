@@ -1,0 +1,132 @@
+@charset "utf-8";
+@import "../core/css3-mixins.scss";
+@import "../core/g_vars.scss";
+@import "../mod/base.scss";
+@import "../mod/head.scss";
+@import "../mod/foot.scss";
+
+.m-login {
+    /***
+    * position : absolute;
+    * top : 75px;
+    * right : 0px; 
+    **/
+    background-color : rgba(0,0,0,0.3);
+    margin-top : 35px;
+    margin-bottom : 45px;
+    color : #fff;
+    @include fr;
+    label {
+        margin-bottom : 0px;
+    }
+    .m-inps{
+        padding : 42px 58px 28px;
+        @include border-radius(3px);
+        .inpc {
+            border : 1px solid #dbdbdb;
+            @include border-radius(3px);
+            overflow : hidden;
+            label {
+                @include fl;
+                width : 46px;
+                height : 46px;
+            }
+            input {
+                color : #555;
+                font-size : 24px;
+                @include fl;
+                width : 284px - 46px; 
+                height: 46px;
+                line-height: 46px; 
+                border : 0px;
+                padding : 0px 0px 0px 10px;
+                &:focus {outline:none;}
+            }
+        }
+        .uname {
+            margin-bottom : 10px;
+            label {
+                background : #f7f7f7 url('#{$img_host}/sprit.png') no-repeat 8px -153px;
+            }
+        }
+        .upwd {
+            label {
+                background : #f7f7f7 url('#{$img_host}/sprit.png') no-repeat -42px -152px;
+            }
+        }
+        .btn-wrap {
+            margin-top : 24px;
+        }
+        .btn-submit {
+            cursor : pointer;
+            background : #f9903c;
+            color :#fff;
+            border : 0px;
+            height : 48px;
+            line-height : 48px;
+            width : 286px;
+            font-size : 24px;
+            @include border-radius(3px);
+            
+        }
+    }
+
+    .m-u-op {
+        margin-top : 15px;
+        overflow : hidden;
+        @include border-radius(3px);
+        font-size : 24px;
+        .l {
+            margin-left : 15px;
+            color :#4d4d4d;
+            @include fl;
+            input {
+                visibility : hidden;
+            }
+            label {
+                line-height : 64px;
+            }
+            .chbox {
+                cursor : pointer;
+                height : 32px;
+                width : 34px;
+                vertical-align : middle;
+                @include inline-block;
+                background : url('#{$img_host}/sprit.png') no-repeat -167px -159px;
+            }
+            .checked {
+                background : url('#{$img_host}/sprit.png') no-repeat -128px -159px;
+            }
+        }
+        .r {
+            @include fr;
+            line-height : 64px;
+            margin-right : 56px;
+        }
+    }
+}
+
+.bs-docs-nav {
+    margin-bottom : 20px;
+}
+.m-footer {
+    margin-bottom : 20px;
+}
+.m-main {
+    height : 600px;
+}
+.m-main-inner {
+  position: relative;
+  padding: 30px 15px;
+  padding-top : 60px;
+  color: #cdbfe3;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0,0,0,.1);
+  background-color: #6f5499;
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#563d7c),to(#6f5499));
+  background-image: -webkit-linear-gradient(top,#563d7c 0,#6f5499 100%);
+  background-image: -o-linear-gradient(top,#563d7c 0,#6f5499 100%);
+  background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#563d7c', endColorstr='#6F5499', GradientType=0);
+  background-repeat: repeat-x;
+}

@@ -1,0 +1,37 @@
+.g-nav {
+    &-inner {
+        background : #f3f3f3;
+        overflow : hidden;
+        border-bottom : 1px solid #e7e7e7;
+        li {
+            @include fl;
+            width : 190px;
+            height: 80px;
+            line-height : 80px;
+            color : #4d4d4d;
+            text-align : center;
+            font-size : 24px;
+            border-right  : 1px solid #e7e7e7;
+            a {
+                color : #4d4d4d; 
+            }
+        }
+        .cur {
+            background : #fff;
+            height : 78px;
+            line-height : 78px;
+            border-bottom: 2px solid #00cbcd;
+            color : #00cbcd;
+            a {
+                color : #00cbcd;
+            }
+        }
+        .last {
+            border-right : 0px;
+        }
+    }
+    .m-reg-nav li {
+        width : 298px;
+    }
+
+}

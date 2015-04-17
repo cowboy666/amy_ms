@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Amily 后台管理系统</title>
+        <!--#include file="/include/ext_source.html" -->
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css" type="text/css" >
+        <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap-theme.min.css" type="text/css" >
+        <link rel="stylesheet" href="http://cdn.bootcss.com/lightbox2/2.7.1/css/lightbox.css" type="text/css" >
+        <link rel="stylesheet" href="http://amilystatic.me/ms/styles/shop.css" type="text/css" >
+    </head>
+    <body>
+        <!--#include file="/include/head.html" -->
+        <div class="m-main" id="main">
+            <div class="hide">
+            <div class="container">
+                <div class="alert alert-info" role="alert">
+                    <strong>审核商户</strong>商户信息如下 
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="page-header">
+                    <h1>东方名剪－北土城店</h1>
+                </div>
+                <div class="mod-dt">
+                    <div class="mod-hd">
+                        <h4>商户基本信息</h4>
+                    </div>
+                    <div class="mod-box">
+                        <div class="container">
+                            <div class="row">
+                                <dl class="dl-info">
+                                    <dt>商户名称：</dt>
+                                    <dd>东方榠基＝大洒店</dd>
+                                </dl>    
+                                <dl class="dl-info">
+                                    <dt>电话：</dt>
+                                    <dd>13312341234</dd>
+                                </dl>    
+                                <dl class="dl-info">
+                                    <dt>营业期限：</dt>
+                                    <dd>13312341234</dd>
+                                </dl>    
+
+                                <dl class="dl-info">
+                                    <dt>营业执照编号：</dt>
+                                    <dd>13312341234</dd>
+                                </dl>    
+                           </div>
+                           <div class="row">
+                                <div class="m-img-box">
+                                    <div class="m-img-box-inner">
+                                        <div class="dl-hd">营业执照照片:</div>
+                                        <div class="row">
+                                              <div class="col-xs-6 col-md-4">
+                                                <a href="http://img.dqs-edu.com/product/2015031501/mh3_1280.jpg"   data-lightbox="img1"  class="thumbnail">
+                                                  <img src="http://img.dqs-edu.com/product/2015031501/mh3_1280.jpg"  data-holder-rendered="true" >
+                                                </a>
+                                              </div>
+                                              <div class="col-xs-6 col-md-4">
+                                                <a href="http://img.dqs-edu.com/product/2015031501/mh3_1280.jpg" class="thumbnail" data-lightbox="img1" >
+                                                  <img src="http://img.dqs-edu.com/product/2015031501/mh3_1280.jpg"  data-holder-rendered="true" >
+                                                </a>
+                                              </div>
+                                              <div class="col-xs-6 col-md-4">
+                                                <a href="http://img.dqs-edu.com/product/2015031501/mh3_1280.jpg" class="thumbnail" data-lightbox="img1" >
+                                                  <img src="http://img.dqs-edu.com/product/2015031501/mh3_1280.jpg"  data-holder-rendered="true" >
+                                                </a>
+                                              </div>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>  
+                </div>
+
+                <div class="mod-dt">
+                    <div class="mod-hd">
+                        <h4>门店信息</h4>
+                        <a href="#">拒绝</a>
+                    </div>  
+                    <div class="mod-box" >
+                        <div class="container">
+                            <div class="row">
+                                <dl class="dl-info">
+                                    <dt>经营类别：</dt>
+                                    <dd>美发，美甲</dd>
+                                </dl>
+                                <dl class="dl-info">
+                                    <dt>门店规模：</dt>
+                                    <dd>5-10人</dd>
+                                </dl>    
+                                <dl class="dl-info">
+                                    <dt>城市：</dt>
+                                    <dd>北京</dd>
+                                </dl>    
+                                <dl class="dl-info">
+                                    <dt>地址：</dt>
+                                    <dd>大叔大叔的撒打算的撒打算打算打算的撒</dd>
+                                </dl>    
+                                <dl class="dl-normal">
+                                    <dt>地理位置:</dt>
+                                    <dd>
+                                        <div class="map-con">
+                                        </div>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="mod-dt">
+                    <div class="mod-hd">
+                        <h4>商户支付信息</h4>
+                    </div>
+                    <div class="mod-box">
+                        <div class="container">
+                            <div class="row dl-row">
+                                <div class="col-md-4"><span>开户银行</span>:<span>中国银行</span></div>
+                                <div class="col-md-4">
+                                    <span>卡主姓名</span>:<span>赵四</span>
+                                </div>
+                                <div class="col-md-4"><span>银行卡号</span>:<span>123213213123123123</span></div>
+                            </div> 
+                            <div class="row dl-row">
+                                <div class="col-md-4"><span>支付宝帐号</span>:<span>12312321321321312312</span></div>
+                                <div class="col-md-4"><span>支付宝卡主</span>:<span>zhaosi</span></div>
+                            </div>  
+                        </div>    
+                    </div>
+                </div>
+            
+                 <div class="mod-dt">
+                    <div class="mod-hd">
+                        <h4>店长信息</h4>
+                    </div>
+                    <div class="mod-box">
+                        <div class="container">
+                            <div class="row dl-row">
+                                    <span>店长：</span>
+                                    <span>张三</span>
+                                </dl> 
+                            </div> 
+                            <div class="row dl-row">
+                                <div class="m-img-box">
+                                    <div class="m-img-box-inner">
+                                        <div class="dl-hd">身份证照片:</div>
+                                        <div class="row">
+                                            <div class="col-xs-6 col-md-4">
+                                                <a href="#" class="thumbnail">
+                                                    <img src="http://img.dqs-edu.com/product/2015031501/mh3_1280.jpg"  data-holder-rendered="true" >
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                </div>  
+                            </div>  
+                        </div>    
+                    </div>
+                </div>
+
+
+            </div>    
+            <div class="container m-btn-cts">
+                <button type="button" class="btn btn-primary">审核通过</button>
+                <button type="button" class="btn btn-danger">拒绝通过</button>
+            </div>  
+            </div>
+        </div>
+        <!--#include file="/include/foot.html" -->
+    </body>
+    <script src="http://cdn.bootcss.com/jquery/2.1.2/jquery.min.js" ></script>    
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js" ></script>
+    <script src="http://cdn.bootcss.com/lightbox2/2.7.1/js/lightbox.min.js" ></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=DB192aa7c6701a0c5c5e7572bce421cc" ></script>
+    <script src="http://amilystatic.me/ms/scripts/page/shop.js" ></script>
+</html>        

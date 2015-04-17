@@ -1,0 +1,390 @@
+/* -------------------------------------------------------------
+  Sass CSS3 Mixins! The Cross-Browser CSS3 Sass Library
+  By: Matthieu Aussaguel, http://www.mynameismatthieu.com, @matthieu_tweets
+
+  List of CSS3 Sass Mixins File to be @imported and @included as you need
+
+  The purpose of this library is to facilitate the use of CSS3 on different browsers avoiding HARD TO READ and NEVER
+  ENDING css files
+
+  note: All CSS3 Properties are being supported by Safari 5
+  more info: http://www.findmebyip.com/litmus/#css3-properties
+
+  Mixins available:
+    -   css3-prefix             - arguments: Property, Value
+    -   background-gradient     - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-horizontal   - arguments: Start Color: #3C3C3C, End Color: #999999
+    -   background-radial       - arguments: Start Color: #FFFFFF, Start position: 0%, End Color: #000000, End position: 100%
+    -   background-size         - arguments: Width: 100%, Height: 100%
+    -   background-opacity      - arguments: Color: #000, Opacity: .85
+    -   border-radius           - arguments: Radius: 5px
+    -   border-radius-separate  - arguments: Top Left: 5px, Top Right: 5px, Bottom Left: 5px, Bottom Right: 5px
+    -   box                     - arguments: Orientation: horizontal, Pack: center, Align: center
+    -   box-rgba                - arguments: R: 60, G: 3, B: 12, Opacity: 0.23, Color: #3C3C3C
+    -   box-shadow              - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   box-sizing              - arguments: Type: border-box
+    -   columns                 - arguments: Count: 3, Gap: 10
+    -   double-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Radius: 0
+    -   flex                    - arguments: Value: 1
+    -   flip                    - arguments: ScaleX: -1
+    -   font-face               - arguments: Font Family: myFont, Eot File Src: myFont.eot, Woff File Src: myFont.woff, Ttf File Src: myFont.ttf
+    -   opacity                 - arguments: Opacity: 0.5
+    -   outline radius          - arguments: Radius: 5px
+    -   resize                  - arguments: Direction: both
+    -   rotate                  - arguments: Degree: 0, M11: 0, M12: 0, M21: 0, M22: 0
+    CSS Matrix Rotation Calculator http://www.boogdesign.com/examples/transforms/matrix-calculator.html
+    -   text-shadow             - arguments: X: 2px, Y: 2px, Blur: 5px, Color: rgba(0,0,0,.4)
+    -   transform               - arguments: Parameters: null
+    -   transform-style         - arguments: Style: preserve-3d
+    -   transition              - Default arguments: What: all, Length: 1s, Easing: ease-in-out
+    -                            - Examples: @include transition (all 2s ease-in-out);
+    -                                        @include transition (opacity 1s ease-in 2s, width 2s ease-out);
+    -   triple-borders          - arguments: Color One: #3C3C3C, Color Two: #999999, Color Three: #000000, Radius: 0
+    -   keyframes               - arguments: Animation name
+                                - content:   Animation css
+    -   animation               - arguments: name duration timing-function delay iteration-count direction fill-mode play-state
+                                             (http://www.w3schools.com/cssref/css3_pr_animation.asp)
+
+------------------------------------------------------------- */
+/* ADDS A BROWSER PREFIX TO THE PROPERTY */
+/* BACKGROUND GRADIENT */
+/* BACKGROUND HORIZONTAL */
+/* BACKGROUND RADIAL */
+/* BACKGROUND SIZE */
+/* BACKGROUND COLOR OPACITY */
+/* BORDER RADIUS */
+/* BOX */
+/* BOX RGBA */
+/* BOX SHADOW */
+/* BOX SIZING */
+/* COLUMNS */
+/* DOUBLE BORDERS */
+/* FLEX */
+/* FLIP */
+/* FONT FACE */
+/* OPACITY */
+/* OUTLINE RADIUS */
+/* RESIZE */
+/* ROTATE*/
+/* TEXT SHADOW */
+/* TRANSFORM  */
+/* TRANSFORM STYLE */
+/* TRANSITION */
+/* TRIPLE BORDERS */
+/* KEYFRAMES */
+/* ANIMATION */
+body {
+  font-family: "Helvetica Neue", Helvetica, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+  color: #333; }
+
+.bs-docs-nav {
+  border-bottom: 1px solid #563d7c;
+  background-color: #fff;
+  margin-bottom: 0px; }
+
+.bs-docs-nav .navbar-brand, .bs-docs-nav .navbar-nav > li > a {
+  font-weight: 500;
+  color: #563d7c; }
+
+body {
+  background-color: #F3F7FA; }
+
+.m-footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #767676;
+  text-align: center;
+  background-color: #F3F7FA;
+  height: 80px; }
+
+.m-main {
+  background-color: #fff;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  min-height: 600px; }
+
+.g-pop-bg {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 900;
+  background-color: #000;
+  left: 0px;
+  top: 0px;
+  opacity: 0.5;
+  filter: Alpha(opacity=50); }
+
+.g_dlg_box {
+  overflow: auto;
+  top: 0px;
+  left: 0px;
+  overflow-x: hidden; }
+
+.m-pop {
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  background-color: #fff; }
+  .m-pop-hd {
+    border-bottom: 1px solid #c9c9c9;
+    background-color: #f6f6f6;
+    color: #000;
+    font-size: 16px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    zoom: 1; }
+    .m-pop-hd:after {
+      clear: both;
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "."; }
+    .m-pop-hd .hd-close {
+      float: right;
+      _display: inline;
+      width: 15px;
+      height: 15px;
+      color: #666;
+      font-size: 24px;
+      line-height: 1em;
+      margin-right: 10px;
+      margin-top: 12px; }
+      .m-pop-hd .hd-close:hover {
+        color: #f60; }
+  .m-pop .m-pop-ft .btn-wrap {
+    text-align: right;
+    padding: 10px 0px; }
+    .m-pop .m-pop-ft .btn-wrap button {
+      height: 30px;
+      line-height: 30px;
+      width: 80px;
+      font-size: 14px;
+      background-color: #00cbcd;
+      color: #fff;
+      border: 0px;
+      cursor: pointer;
+      -webkit-border-radius: 5px;
+      -khtml-border-radius: 5px;
+      -moz-border-radius: 5px;
+      -ms-border-radius: 5px;
+      -o-border-radius: 5px;
+      border-radius: 5px;
+      margin-right: 10px; }
+      .m-pop .m-pop-ft .btn-wrap button:focus {
+        outline: none; }
+
+.m-pop-alert {
+  padding: 0px 10px; }
+  .m-pop-alert .m-pop-bd {
+    padding: 10px; }
+  .m-pop-alert .alert-ct {
+    width: 280px; }
+  .m-pop-alert .m-pop-ft {
+    border-top: 1px solid #c9c9c9; }
+    .m-pop-alert .m-pop-ft .btn-wrap {
+      text-align: center;
+      padding: 10px 0px; }
+      .m-pop-alert .m-pop-ft .btn-wrap button {
+        height: 24px;
+        line-height: 24px;
+        width: 80px;
+        font-size: 12px;
+        background-color: #00cbcd;
+        color: #fff;
+        border: 0px;
+        cursor: pointer;
+        -webkit-border-radius: 5px;
+        -khtml-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+        border-radius: 5px;
+        margin-right: 10px; }
+        .m-pop-alert .m-pop-ft .btn-wrap button:focus {
+          outline: none; }
+      .m-pop-alert .m-pop-ft .btn-wrap .btn-cfr {
+        margin-right: 15px; }
+
+.m-dlg-form {
+  width: 360px;
+  margin-top: 15px; }
+  .m-dlg-form .form-row {
+    color: #333;
+    padding: 5px 15px;
+    font-size: 14px;
+    zoom: 1;
+    height: 30px;
+    line-height: 30px; }
+    .m-dlg-form .form-row:after {
+      clear: both;
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "."; }
+    .m-dlg-form .form-row .lb, .m-dlg-form .form-row .desc, .m-dlg-form .form-row .winp {
+      float: left;
+      _display: inline; }
+    .m-dlg-form .form-row .lb {
+      margin-right: 10px; }
+    .m-dlg-form .form-row .winp .inp {
+      line-height: 22px;
+      border: 1px solid #cccccc;
+      width: 200px; }
+      .m-dlg-form .form-row .winp .inp:focus {
+        outline: none; }
+  .m-dlg-form .m-alert-tip {
+    position: absolute; }
+
+.form-control {
+  color: #333; }
+
+.m-dbox .m-form .add-subject {
+  margin-left: 10px; }
+
+.m-add-subject-ct {
+  margin-left: 20px;
+  color: #ff6c60; }
+
+.m-sbox {
+  padding: 0px;
+  zoom: 1; }
+  .m-sbox:after {
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "."; }
+
+.add-btns {
+  line-height: 34px; }
+
+.m-radios .radio {
+  margin-top: 8px;
+  margin-bottom: 0px;
+  margin-right: 10px; }
+
+.m-prd-box {
+  zoom: 1; }
+  .m-prd-box:after {
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "."; }
+  .m-prd-box .m-prd-search {
+    zoom: 1; }
+    .m-prd-box .m-prd-search:after {
+      clear: both;
+      display: block;
+      height: 0;
+      visibility: hidden;
+      content: "."; }
+
+.m-drow {
+  zoom: 1;
+  margin-bottom: 10px; }
+  .m-drow:after {
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: "."; }
+
+.img-text, .p-text {
+  margin-top: 10px; }
+
+.form-group input {
+  color: #333; }
+
+.form-group textarea {
+  color: #333; }
+
+.p-text {
+  margin-top: 10px; }
+  .p-text textarea {
+    height: 120px; }
+
+.add-select-btn {
+  margin-left: 20px; }
+
+.item-list .nav {
+  margin-top: 0px; }
+  .item-list .nav .ind {
+    margin-right: 10px; }
+  .item-list .nav .item .fa {
+    width: 20px;
+    height: 20px; }
+
+.subject-list .subject-img-box {
+  width: 400px;
+  height: 200px;
+  overflow: hidden; }
+  .subject-list .subject-img-box img {
+    width: 100%; }
+.subject-list .sub-op {
+  margin-right: 25px;
+  height: 20px;
+  font-size: 14px;
+  color: #2DB6AC; }
+
+.m-st-add-btns {
+  margin-left: 18%; }
+  .m-st-add-btns a {
+    color: #88a755;
+    margin-right: 20px;
+    font-weight: bold; }
+
+.subject-item-btns {
+  margin-top: 20px; }
+  .subject-item-btns .btn-primary {
+    margin-left: 18%; }
+
+.m-subject-items .img-box {
+  display: none;
+  margin-top: 10px;
+  width: 100%;
+  height: 150px;
+  overflow: hidden; }
+  .m-subject-items .img-box .img-wrap {
+    vertical-align: middle;
+    display: table-cell; }
+  .m-subject-items .img-box img {
+    width: 100%; }
+
+.m-st-ps .twt-feed {
+  padding: 10px; }
+.m-st-ps .twt-feed .wtt-mark {
+  display: none; }
+.m-st-ps .twt-feed a {
+  margin: 0px;
+  float: none;
+  display: block; }
+  .m-st-ps .twt-feed a img {
+    width: 100%;
+    height: auto;
+    -webkit-border-radius: 0px;
+    -khtml-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    border-radius: 0px; }
+
+.m-subject-items .m-p-textarea {
+  height: 150px;
+  font-size: 12px; }
+
+.m-tools a {
+  margin-left: 10px;
+  color: #a7a7a7;
+  font-size: 12px; }
+
+.m-st-logo-img {
+  overflow: hidden;
+  display: none; }
+  .m-st-logo-img img {
+    width: 100%; }
+
+.m-sbt-logo {
+  overflow: hidden; }
+  .m-sbt-logo img {
+    width: 100%; }

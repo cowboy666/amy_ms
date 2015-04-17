@@ -1,0 +1,11 @@
+<div class="time-row {@if index % 2 == 0 } odd {@/if}">
+    <div class="label-col">
+        <div class="label-txt">
+        </div>
+    </div>
+    <div class="time-ct">
+        {@each time_list as it,ind}
+        <div class="ct-col {@if it.special} sp-col {@/if}" data-col='${ind}' ><div class="order-info"></div></div>   
+        {@/each}
+    </div>
+</div>

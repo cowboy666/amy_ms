@@ -1,0 +1,179 @@
+{@if status == 1}
+<div class="container">
+    <div class="alert alert-info" role="alert">
+        <strong>审核商户</strong>商户信息如下 
+    </div>
+</div>
+{@/if}
+
+<div class="container">
+    <div class="page-header">
+        <h1>${name}</h1>
+    </div>
+    <div class="mod-dt">
+        <div class="mod-hd">
+            <h4>商户基本信息</h4>
+            <a href="#" class="dt-reject ai-reject-btn">拒绝</a>
+        </div>
+        <div class="mod-box">
+            <div class="container">
+                <div class="row nodl dl-reject ai-reject" {@if !reject_four}style="display:none;"{@/if} data-step="4">
+                    <textarea>${reject_one}</textarea>
+                </div>
+                <div class="row">
+                    <dl class="dl-info">
+                        <dt>商户名称：</dt>
+                        <dd>${name}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>法人：</dt>
+                        <dd>${legal}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>电话：</dt>
+                        <dd>${phone}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>营业期限：</dt>
+                        <dd>${operator_period}</dd>
+                    </dl>    
+
+                    <dl class="dl-info">
+                        <dt>营业执照编号：</dt>
+                        <dd>${license}</dd>
+                    </dl>    
+               </div>
+               <div class="row nodl">
+                    <div class="m-img-box">
+                        <div class="m-img-box-inner">
+                            <div class="dl-hd">营业执照照片:</div>
+                            <div class="row">
+                                {@each busi_imgs as item , index}
+                                      <div class="col-xs-6 col-md-4">
+                                        <a href="${item}" data-lightbox="busi-img" class="thumbnail">
+                                          <img src="${item}"  data-holder-rendered="true" >
+                                        </a>
+                                      </div>
+                                {@/each}
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>  
+    </div>
+
+    <div class="mod-dt">
+        <div class="mod-hd">
+            <h4>门店信息</h4>
+            <a href="#" class="dt-reject ai-reject-btn">拒绝</a>
+        </div>  
+        <div class="mod-box" >
+            <div class="container">
+                <div class="row nodl dl-reject ai-reject" {@if !reject_four}style="display:none;"{@/if} data-step="4">
+                    <textarea>${reject_two}</textarea>
+                </div>
+                <div class="row">
+                    <dl class="dl-info">
+                        <dt>经营类别：</dt>
+                        <dd>${label_txt}</dd>
+                    </dl>
+                    <dl class="dl-info">
+                        <dt>门店规模：</dt>
+                        <dd>${scale}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>城市：</dt>
+                        <dd>${city}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>地址：</dt>
+                        <dd>${address}</dd>
+                    </dl>   
+                     <dl class="dl-info">
+                        <dt>门店电话：</dt>
+                        <dd>${shop_phone}</dd>
+                    </dl>
+                    <dl class="dl-normal" id="map-warp" data-city="${city}"  data-lng="${longitude}" data-lat="${latitude}">
+                        <dt>地理位置:</dt>
+                        <dd>
+                            <div class="map-con">
+                            </div>
+                        </dd>
+                    </dl>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mod-dt">
+        <div class="mod-hd">
+            <h4>商户支付信息</h4>
+            <a href="#" class="dt-reject ai-reject-btn">拒绝</a>
+        </div>
+        <div class="mod-box">
+            <div class="container">
+                <div class="row nodl dl-reject ai-reject" {@if !reject_four}style="display:none;"{@/if} data-step="4">
+                    <textarea>${reject_three}</textarea>
+                </div>
+                {@if bankName}
+                <div class="row dl-row">
+                    <div class="col-md-4"><span>开户银行</span>:<span>${bankName}</span></div>
+                    <div class="col-md-4">
+                        <span>卡主姓名</span>:<span>${cardholderName}</span>
+                    </div>
+                    <div class="col-md-4"><span>银行卡号</span>:<span>${bankCard}</span></div>
+                </div> 
+                {@else}
+                <div class="row dl-row">
+                    <div class="col-md-4"><span>支付宝帐号</span>:<span>12312321321321312312</span></div>
+                    <div class="col-md-4"><span>支付宝卡主</span>:<span>zhaosi</span></div>
+                </div> 
+                {@/if}
+            </div>    
+        </div>
+    </div>
+
+     <div class="mod-dt">
+        <div class="mod-hd">
+            <h4>店长信息</h4>
+            <a href="#" class="dt-reject ai-reject-btn">拒绝</a>
+        </div>
+        <div class="mod-box">
+            <div class="container">
+                 <div class="row nodl dl-reject ai-reject" {@if !reject_four}style="display:none;"{@/if} data-step="4">
+                    <textarea>${reject_four}</textarea>
+                </div>
+                <div class="row dl-row nodl">
+                        <span>店长：</span>
+                        <span>${bossName}</span>
+                    </dl> 
+                </div> 
+                <div class="row dl-row nodl">
+                    <div class="m-img-box">
+                        <div class="m-img-box-inner">
+                            <div class="dl-hd">身份证照片:</div>
+                            <div class="row">
+                                {@each person_imgs as item,index}
+                                <div class="col-xs-6 col-md-4">
+                                    <a href="${item}" data-lightbox="person-img"  class="thumbnail">
+                                        <img src="${item}"  data-holder-rendered="true" >
+                                    </a>
+                                </div>
+                                {@/each}
+                            </div>
+                        </div>  
+                    </div>  
+                </div>  
+            </div>    
+        </div>
+    </div>
+
+</div>    
+{@if status == 1}
+<div class="container m-btn-cts">
+    <button type="button" class="btn btn-primary ai-reslove">审核通过</button>
+    <button type="button" class="btn btn-danger ai-reject">拒绝通过</button>
+</div>  
+{@/if}

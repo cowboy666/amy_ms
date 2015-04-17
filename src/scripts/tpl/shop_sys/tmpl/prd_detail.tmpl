@@ -1,0 +1,82 @@
+{@if status == 0}
+<div class="container">
+    <div class="alert alert-info" role="alert">
+        <strong>审核商品</strong>商品信息如下 
+    </div>
+</div>
+{@/if}
+
+<div class="container">
+    <div class="page-header">
+        <h1>${name}</h1>
+    </div>
+    <div class="mod-dt">
+        <div class="mod-hd">
+            <h4>商品信息</h4>
+        </div>
+        <div class="mod-box">
+            <div class="container">
+                <div class="row">
+                    <dl class="dl-info">
+                        <dt>名称：</dt>
+                        <dd>${name}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>所属商家：</dt>
+                        <dd>${shop_name}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>服务时间：</dt>
+                        <dd>${service_time}分钟</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>标签：</dt>
+                        <dd>${label_txt}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>现在价格：</dt>
+                        <dd>${price}</dd>
+                        <dd>原始价格：${org_price}</dd>
+                    </dl>    
+                    <dl class="dl-info">
+                        <dt>介绍：</dt>
+                        <dd>${desc}</dd>
+                    </dl>    
+               </div>
+               <div class="row nodl">
+                    <div class="m-img-box">
+                        <div class="m-img-box-inner">
+                            <div class="dl-hd">商品照片:</div>
+                            <div class="row">
+                                {@each prd_imgs as item , index}
+                                      <div class="col-xs-6 col-md-4">
+                                        <a href="${item}" data-lightbox="busi-img" class="thumbnail">
+                                          <img src="${item}"  data-holder-rendered="true" >
+                                        </a>
+                                      </div>
+                                {@/each}
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                {@if status == 0 }
+                <div class="row nodl dl-reject ai-reject" >
+                    <div>拒绝原因</div>
+                    <textarea placeholder="如果拒绝通过 请填写拒绝原因"></textarea>
+                </div>
+                {@else if status == 3} 
+                <div class="row nodl dl-reject ai-reject" >
+                    <div>拒绝原因</div>
+                    <p>${detail}</p>
+                </div>
+                {@/if}
+            </div>  
+        </div>  
+    </div>
+</div>    
+{@if status == 0}
+<div class="container m-btn-cts">
+    <button type="button" class="btn btn-primary ai-reslove">审核通过</button>
+    <button type="button" class="btn btn-danger ai-reject">拒绝通过</button>
+</div>  
+{@/if}
