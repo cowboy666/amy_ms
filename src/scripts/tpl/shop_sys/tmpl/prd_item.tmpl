@@ -1,15 +1,24 @@
  <tr>
     <td>
-        ${ind_txt}
-    </td>
+        ${prd_id}
+    </td>    
     <td>
         ${name}
+    </td>    
+    <td>
+        ${shop_name}
     </td>    
     <td>
         ${create_time}
     </td>
     <td>
-        ${operator}
+        {@if online == 2}
+            上架
+        {@else if online == 1}
+            下架
+        {@else if online == 3}
+            删除
+        {@/if}
     </td>
     <td>
         {@if status == 0 }

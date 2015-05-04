@@ -11,7 +11,7 @@ $(function(){
     addSubject();
     var subject_id = url_params.subject_id;
     if (subject_id !== void 0) {
-        $("button.add-subject").html("更新专题").after($('<a href="/m/operation/subject_item_edit?subject_id='+subject_id+'" class="btn btn-info" >专题详情</a>'));
+        $("button.add-subject").html("保存").after($('<a href="/m/operation/subject_item_edit?subject_id='+subject_id+'" class="btn btn-info" >专题详情</a>'));
 
         http.get({
             url : "/api/getAlbum.htm",
@@ -23,6 +23,7 @@ $(function(){
            if (data) {
                $("#subject_name").val(data.name);
                 $("#subject_logo").val(data.imageUrl);
+                $("#content").val(data.content);
                 $("#upload-img").removeClass("hide").find("img").attr("src", data.imageUrl) 
                 $("#upload-img h4").html("专题头图");
                 if (data.detailImageUrl) {
@@ -39,7 +40,6 @@ $(function(){
 
     }
        
-});
 
 function addSubject(){
     var $form = $("#subject_form");
@@ -49,7 +49,8 @@ function addSubject(){
             imageUrl : "#subject_logo",
             detailImageUrl : "#detail-subject_logo",
             startDate : "#start_date",
-            endDate : "#end_date"
+            endDate : "#end_date",
+            content : "#content"
         }
     });
     $form.on("form-submit",function(e,form_data){
@@ -58,21 +59,40 @@ function addSubject(){
             alert("没有填写完数据");
             return;
         }
-        http.post({
-            url : "/api/addAlbum.htm",
-            data : form_data,
-            async : false
+        if (subject_id === void 0) {
+            http.post({
+                url : "/api/addAlbum.htm",
+                data : form_data,
+                async : false
 
-        }).done(function(rs){
-            if (rs.ret == 1) {
-                var album = rs.album;
-                window.location.href="/m/operation/subject_item_edit?subject_id="+ album.id;
-            } else {
+            }).done(function(rs){
+                if (rs.ret == 1) {
+                    var album = rs.album;
+                    window.location.href="/m/operation/subject_item_edit?subject_id="+ album.id;
+                } else {
+                    alert("添加失败");
+                }
+            }).fail(function(){
                 alert("添加失败");
-            }
-        }).fail(function(){
-            alert("添加失败");
-        });
+            });
+        } else {
+           form_data.id = subject_id;
+           http.post({
+                url : "/api/updateAlbum.htm",
+                data : form_data,
+                async : false
+
+            }).done(function(rs){
+                if (rs.ret == 1) {
+                    var album = rs.album;
+                    alert("更新专题成功");
+                } else {
+                    alert("添加失败");
+                }
+            }).fail(function(){
+                alert("添加失败");
+            }); 
+        }
     })
 }
 
@@ -103,3 +123,4 @@ function initUpload(){
     });
 
 }
+});

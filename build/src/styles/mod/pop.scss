@@ -115,3 +115,19 @@
 
 }
 
+.m-loading {
+    background-color : #fff;
+    width : 360px;
+    height : 90px;
+
+    .loading-box {
+        padding : 8px 0px 3px;
+        text-align : center;
+    }
+    .loading-text-box {
+        text-align : center;
+        color : #999;
+        font-size : 14px;
+    }
+}
+

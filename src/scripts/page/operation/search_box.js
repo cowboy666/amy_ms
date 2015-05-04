@@ -16,10 +16,14 @@ juicer.register('shop_status', function(s){
 }); 
 
 juicer.register('prd_status', function(s){
-    if (s == 1) {
-        return "上线"; 
+    if (s == "2") {
+        return "上架"; 
+    } else if (s == "1") {
+        return "下架";
+    } else if (s =="3") {
+        return  "删除";        
     }
-    return "上线";
+    return "";
 }); 
 
 var Limit = 10;
@@ -33,7 +37,6 @@ var SearchBox = function(opt){
     this._page_limit = opt.limit || Limit;
     this._opt = opt;
     this._opt.add_fn = opt.add_fn || $.noop;
-    this._cur_type = "prd";
 }
 
 SearchBox.prototype.init = function(){
@@ -47,6 +50,23 @@ SearchBox.prototype._initSearch = function(){
     var $search_type = $f.find("input[type=radio]");
     var $search_inp = $f.find(".ai-search-inp");
     var search_type  = ["prd","shop"];
+    
+    this._cur_type = me._opt.default_type || "prd";
+    
+    if (this._cur_type == "prd") {
+        $search_type[0].checked = true;
+        $search_type[1].checked = false;
+        if (me._opt.only_one) {
+             $search_type.eq(1).closest(".radio").hide();
+        }
+    } else {
+        $search_type[0].checked = false;
+        $search_type[1].checked = true;
+        if (me._opt.only_one) {
+             $search_type.eq(0).closest(".radio").hide();
+        }
+    }
+
     this._$search_form.on("submit",function(e){
         e.preventDefault();
         var type ; 
@@ -126,7 +146,7 @@ SearchBox.prototype._initResult = function(){
 SearchBox.prototype._search = function(obj){
     var query_obj = this._SEARCH_MAP[obj.type];
     var pn = 1 , ps = this._page_limit;
-    var params = {pn:pn,ps:ps,query:obj.query};
+    var params = {pn:pn,ps:ps,q:obj.query};
     this._cache_params = params;
     this._cur_type = obj.type;
     this._renderListHd(obj.type);
@@ -136,13 +156,14 @@ SearchBox.prototype._SEARCH_MAP = {
     "prd" : {
         search : function(params,type){
             var me = this;
-            var url = '/api/getProductList.htm';
+            //var url = '/api/getProductList.htm';
+            var url = '/searchProduct?from=oss';
             http.get({
                 url : url,
                 data : params
             }).done(function(rs){
                 me._cache_params.pn = params.pn;
-                me._renderList(type,rs.productList);
+                me._renderList(type,rs.data);
                 me._renderPage(params.pn,rs.totalNum,params.ps);
             }).fail(function(){
                 alert("服务器错误，请刷新重试"); 

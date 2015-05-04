@@ -235,6 +235,18 @@ body {
   .m-dlg-form .m-alert-tip {
     position: absolute; }
 
+.m-loading {
+  background-color: #fff;
+  width: 360px;
+  height: 90px; }
+  .m-loading .loading-box {
+    padding: 8px 0px 3px;
+    text-align: center; }
+  .m-loading .loading-text-box {
+    text-align: center;
+    color: #999;
+    font-size: 14px; }
+
 .m-main h3 {
   margin-top: 0px; }
 

@@ -2,8 +2,13 @@
 <html>
     <head>
         <meta charset="utf-8"/>
-        <title>Amily后台－专题编辑</title>
+        <title>产品故事-Amily后台</title>
         <!--#include file="/include/ext_source.html" -->
+        <style type="text/css" >
+            .m-subject-item-title {
+                display : none;
+            }  
+        </style>
     </head>
     <body>
         <section id="container">
@@ -17,29 +22,14 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="m-dbox panel clearfix">
-                                    <h3 class="h3 panel-title">专题基本信息
-                                        <div class="pull-right">
-                                            <button class="btn btn-info" id="subject-md-perview">预览</button>
-                                            <button class="btn btn-success" id="subject-md-btn">修改</button>
-                                        <div>    
-                                    </h3>
-                                    <div class="m-form col-lg-6 panel-body">
-                                        <h2 id="st-name"></h2>
-                                    </div>   
-                                    <div class="m-form col-lg-6 hide">
-                                        <div class="panel-body" id="upload-img">
-                                            <div class="m-st-logo-img">
-                                                <img src="" id="st-logo">
-                                            </div>    
-                                        </div>    
-                                    </div>
+                                    <h3 class="h3 panel-title">产品故事</h3>
                                 </div> 
                             </div>
                         </div>    
                          <div class="row">
                             <div class="col-lg-12">
                                 <div class="panel clearfix">
-                                    <div class="panel-heading">搜索商品或者商户信息
+                                    <div class="panel-heading">搜索产品信息
                                         <span class="tools pull-right">
                                                 <a class="fa fa-chevron-down" href="javascript:;"></a>
                                         </span>
@@ -50,7 +40,7 @@
                                 </div>
                             </div>
                         </div> 
-                        <div class="ai-subjects" id="subject-items-box">
+                        <div class="ai-subjects" id="items-box">
 
                         </div>
                     </section>
@@ -60,10 +50,13 @@
     </body>
     <script >
         document.getElementById("operation-nav").className ="active";
+        document.getElementById("op-prd-story").className ="active";
     </script>
     <!--#include file="/include/ext_script.html" -->
     <script src="http://amilystatic.me/scripts/lib/upload/??moxie.js,plupload.min.js,zh_CN.js"></script>
-    <script src="http://amilystatic.me/ms/scripts/page/subject_item_edit.js" ></script>
+    <script src="http://amilystatic.me/ms/ext_source/js/Sortable.js"></script>
+    <script src="http://amilystatic.me/ms/scripts/page/prd_story.js?v=0.03" ></script>
 </html> 
+
 
 

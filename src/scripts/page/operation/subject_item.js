@@ -19,9 +19,13 @@ var SubjectItem = function(opt){
     this._items = [];
 }
 
+SubjectItem.prototype._key = "专题";
 SubjectItem.prototype.init = function(){
     this._createDom();
     this._bind();
+    Sortable.create(this._$item_con[0],{
+        draggable  : ".ai-row"
+    });
 }
 SubjectItem.prototype.dom = function(){
     return this._dom;
@@ -29,7 +33,7 @@ SubjectItem.prototype.dom = function(){
 
 SubjectItem.prototype._createDom = function(){
      var me = this;
-     var html = Tpl();
+     var html = Tpl({key:me._key});
      this._dom = $(html);
      this._$ps_dom = this._dom.find(".ai-ps-box");
      this._$item_con = this._dom.find(".ai-content-item");
@@ -41,8 +45,8 @@ SubjectItem.prototype._createDom = function(){
          var ps_html = this._createShop();
          this._typeid = 1;
      }
-     this._$ps_dom.html(ps_html);
-    this._dom.find(".ai-st-title").val(this._ex_data.name);
+    this._$ps_dom.html(ps_html);
+    this._dom.find(".ai-st-title").val(this._ex_data.title || this._ex_data.name);
      if (this._init_item_data ) {
         var content = this._init_item_data.content;
         var title = this._init_item_data.title;
@@ -63,17 +67,29 @@ SubjectItem.prototype._bind = function(){
     this._$form.on("submit",function(e){
         e.preventDefault();
         var items = me._items;
+        var $inp_doms = me._$item_con.find(".ai-row");
+        var content = _.chain($inp_doms).map(function(html_dom){
+            var id = html_dom.getAttribute("id");
+            var obj = _.filter(items , function(d){
+                return id == d.id;
+            })[0];
+            return obj.get_data();
+        }).filter(function(data){
+            return data != null;
+        }).value();
+        /**
         var content = _.filter(_.map(items,function(it){
             return it.get_data();
         }),function(data){
             return data != null;
         });
+        **/
         var title = $.trim(me._dom.find("input.ai-st-title").val());
         title = title || me._ex_data.name;
         var post_data = {
             albumId : me._subject_id,
             type : me._typeid,
-            entityId : me._typeid == 0 ? me._ex_data.id : me._ex_data.shopId,
+            entityId : me._typeid == 0 ? me._ex_data.productId : me._ex_data.shopId,
             title : title,
             imageUrl : me._dom.find("div.twt-feed img").attr("src"),
             content : JSON.stringify(content)
@@ -180,8 +196,8 @@ SubjectItem.prototype._createPrd = function(){
         img = img.split(/;|,/)[0];
     }
     var tpl_data = {
-        prd_name : data.name,
-        prd_img : img,
+        prd_name : data.title || data.name,
+        prd_img : data.iconUrl || img,
         prd_pr : data.presentPrice,
         prd_old_pr : data.originalPrice,
         prd_dur : data.serviceTime,
@@ -237,6 +253,7 @@ SubjectItem.prototype.addContent = function(type){
         var $dom = obj.dom;
         this._$item_con.append($dom);
         this._items.push(obj);
+        
     }
     return obj;
 }
@@ -330,6 +347,7 @@ SubjectItem.prototype._createImgDom = function(){
 }
 SubjectItem.prototype.bindItemDom = function($dom,id){
     var me = this;
+    $dom.attr("id",id);
     $dom.find(".add-del").click(function(e){
         e.preventDefault();
         me.removeItem(id);

@@ -1,9 +1,9 @@
- <div class="row">
+ <div class="row ai-item">
     <div class="col-lg-12">
         <div class="panel clearfix">
             <div class="panel-heading">
                 首页轮播
-                <span class="m-tools pull-right">
+                <span class="tools pull-right">
                         <a class="fa fa-times" href="javascript:;"></a>
                 </span>
             </div>
@@ -11,6 +11,7 @@
                 <div class="col-sm-7">
                     <div class="m-form " style="margin-right:20px;">
                         <form class="form-horizontal" id="subject_form">
+                            <input type="hidden" name="ad_id" value="" >
                             <div class="form-group">
                                 <label for="subject_logo" class="col-sm-3 control-label" >图片</label>
                                 <div class="col-sm-9 input-group">
@@ -20,7 +21,7 @@
                                      </span>
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group hide">
                                 <label  class="col-sm-3 control-label" >上下线状态</label>
                                 <div class="col-sm-4  control-label" style="text-align:left;">
                                     <label for="status_1_0">
@@ -36,10 +37,10 @@
                             <div class="form-group">
                                 <div class="col-sm-3 control-label" >类型</div>
                                 <div class="col-sm-2 control-label" style="text-align:left;">
-                                    <select class="js-type">
-                                        <option>专题</option>
-                                        <option>产品</option>
-                                        <option>商铺</option>
+                                    <select class="js-type" data-not-init="true">
+                                        <option value="2">专题</option>
+                                        <option value="0">产品</option>
+                                        <option value="1" >商铺</option>
                                     </select>    
                                 </div>
                                 <div class="col-sm-5 control-label" style="text-align:left;">
@@ -48,20 +49,17 @@
                                     </ul>    
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group hide">
                                 <div  class="col-sm-3 control-label" >备注：</div>
                                 <div class="col-sm-9 input-group">
                                     <input type="text" class="form-control" name="text">
                                 </div>
                             </div>
-
-                            <button type="submit" class="btn btn-primary save-btn" style="margin-left: 25%; margin-right : 25px;">保存</button>
                         </form>
                     </div>  
                  </div>
                  <div class="col-sm-5">
                      <div class="img-wrap js-imgbox">
-                         
                      </div>
                  </div>    
             </div>

@@ -4,6 +4,7 @@ var $ = require("../../lib/jquery.js");
 var http = require("../../mod/http.js");
 var pager = require("../../lib/ipager.js");
 var item_tpl = require("./tmpl/prd_item.js");
+var date_format = require("../../lib/idate_format.js");
 
 var Limit = 20;
 
@@ -55,15 +56,17 @@ var Prd_List = {
         });
 
     },
-    render : function(shop_list){
+    render : function(prd_list){
         var $ls = this._$list.empty();
-        _.forEach(shop_list,function(item,i){
+        _.forEach(prd_list,function(item,i){
            var html = item_tpl({
                 ind_txt : i + 1,
+                prd_id : item.prd_id,
                 name : item.name,
-                create_time : item.createTime,
+                create_time : date_format.format( new Date((item.createTime +"000")*1) , "yyyy-MM-dd hh:mm:ss"),
                 prd_id : item.id,
-                operator : item.operator,
+                shop_name : (item.shop|| {}).name || "错误数据",
+                online : item.status, 
                 status : item.checkStatus
            });
            var $d = $(html); 

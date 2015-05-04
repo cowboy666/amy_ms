@@ -1,4 +1,31 @@
 
+
+var pop = require("../mod/pop.js");
+var Dialog = require("./idialog");
+var loading = {
+    _create : function(){
+        var html = '<div class="m-loading">\
+            <div class="loading-box" ><img src="http://amilystatic.me/image/loading.gif" ></div>\
+            <div class="loading-text-box"><p class="loading-text">正在上传,请稍后...</p></div>\
+        </div>';
+        var dlg = new Dialog({
+            content : html
+        })
+        dlg.hide();
+        return dlg;
+    },
+    show : function(){
+        if (!this._dlg) {
+            this._dlg = this._create();
+        }
+        this._dlg.show();
+    },
+    hide : function(){
+        this._dlg.hide();
+    }
+}
+
+
 function create_upload(opt){
     var exts = opt.extensions || ["jpg","png","jpeg"];
     var exts_str = exts.join(",");
@@ -9,9 +36,11 @@ function create_upload(opt){
         //container: opt.container, // ... or DOM Element itself
          
         url : opt.url || "/api/upload",
-        
+        resize : {
+            quality : 50
+        }, 
         filters : {
-            max_file_size : opt.size || '10mb',
+            max_file_size : opt.size || '20mb',
             prevent_duplicates: true,
             mime_types: [
                 {title : "选择("+exts_str+")格式的文件", extensions : exts_str }
@@ -41,10 +70,12 @@ function create_upload(opt){
                     if( opt.check(files,up)) {
                         uploader.start();
                         opt.start && opt.start(up,files);
+                        loading.show();
                     }
                 } else {
                     uploader.start();
                     opt.start && opt.start(up,files); 
+                    loading.show();
                 }
             },
      
@@ -54,7 +85,8 @@ function create_upload(opt){
             },
      
             Error: function(up, err) {
-                console.log("err===",err.code,err.message);
+                loading.hide();
+                alert(err.message);
                 //document.getElementById('console').innerHTML += "\nError #" + err.code + ": " + err.message;
                 
             },
@@ -62,6 +94,7 @@ function create_upload(opt){
             },
             FileUploaded : function(up,files,res){
                 var _status = res.status;
+                loading.hide();
                 if (_status == 200) {
                     var txt = res.response;
                     var data = eval("("+txt+")");

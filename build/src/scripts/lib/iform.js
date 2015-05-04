@@ -54,7 +54,6 @@ Form.prototype.init = function(){
     }); 
 
     this._cus_jv(jv);
-    this._$form.find("select").yselector();
     this._$form.find("div[data-checkbox]").checkbox();
     this._$form.find("input[placeholder],textarea[placeholder]").placeholder();
     this._listen_dom_event();
@@ -110,6 +109,8 @@ Form.prototype.submit = function(args_obj){
     });
 
 }
+
+Form.prototype.get_submit_data = Form.prototype._prase_form_val;
 
 $.fn.form = function(opt){
     opt = opt || {};

@@ -106,14 +106,15 @@ $(function(){
         var dom = $op_dom.find("ol");
         var $lis = dom.find("li") , ind = $lis.length;
         var has_data_ids = _.map($lis,function(li){
-            return $(li).data("item").product.id;
-        })
+            var data = $(li).data("item");
+            return (data.product || {}).id || data.productId;
+        });
         var count = 0;
         _.forEach(data,function(d,i){
-           if (~has_data_ids.indexOf(d.id)) {
+           if (~has_data_ids.indexOf(d.productId)) {
                return;
            }
-           var $l = $('<li class="item "><a href="#"><i class="fa fa-times pull-right"></i><span class="ind">'+(ind+count+1)+'</span>' +d.name+'</a></li>');
+           var $l = $('<li class="item "><a href="#"><i class="fa fa-times pull-right"></i><span class="ind">'+(ind+count+1)+'</span>' +d.title+'</a></li>');
            $l.data("item",d)
            add_datas.push(d);
            dom.append($l);
@@ -165,7 +166,7 @@ $(function(){
         var lis = $op_dom.find("li");
         var prd_ids = _.map(lis,function(li){
             var data = $(li).data("item");
-            var id = (data.product || {}).id || data.id;
+            var id = (data.product || {}).id || data.productId;
             return id
         }).join(",");
         http.post({
